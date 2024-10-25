@@ -15,6 +15,9 @@ terraform {
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
+  client_id       = var.client_id
+  client_secret   = var.client_secret
+  tenant_id       = var.tenant_id
 }
 
 # This ensures we have unique CAF compliant names for our resources.
@@ -36,7 +39,7 @@ locals {
 variable "enable_telemetry" {
   description = "Enable or disable telemetry for the log analytics workspace"
   type        = bool
-  default     = true  # Set a default value if desired
+  default     = true # Set a default value if desired
 }
 
 # Azure connection information
@@ -47,20 +50,20 @@ variable "subscription_id" {
 
 # Azure connection information
 variable "client_id" {
-    description = "Azure client ID"
-    type = string
+  description = "Azure client ID"
+  type        = string
 }
 
 # Azure connection information
 variable "client_secret" {
-    description = "Azure client secret"
-    type = string
+  description = "Azure client secret"
+  type        = string
 }
 
 # Azure connection information
 variable "tenant_id" {
   description = "Azure tenant ID"
-    type = string
+  type        = string
 }
 
 # This picks a random region from the list of regions.
