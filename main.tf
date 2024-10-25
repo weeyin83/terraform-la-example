@@ -39,9 +39,28 @@ variable "enable_telemetry" {
   default     = true  # Set a default value if desired
 }
 
+# Azure connection information
 variable "subscription_id" {
   description = "Azure Subscription ID"
   type        = string
+}
+
+# Azure connection information
+variable "client_id" {
+    description = "Azure client ID"
+    type = string
+}
+
+# Azure connection information
+variable "client_secret" {
+    description = "Azure client secret"
+    type = string
+}
+
+# Azure connection information
+variable "tenant_id" {
+  description = "Azure tenant ID"
+    type = string
 }
 
 # This picks a random region from the list of regions.
